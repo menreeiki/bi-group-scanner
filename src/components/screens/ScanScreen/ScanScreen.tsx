@@ -311,13 +311,28 @@ export function ScanScreen({
           </div>
         ) : (
           <div className="px-6 flex items-center justify-between">
-            <ControlButton
-              active={torch}
-              onClick={() => setTorch((t) => !t)}
-              icon={torch ? <Flashlight size={22} /> : <FlashlightOff size={22} />}
-              label="Фонарик"
-              disabled={!!capturedImage}
-            />
+<ControlButton
+  active={torch}
+  onClick={async () => {
+    const nextTorch = !torch;
+    setTorch(nextTorch);
+    try {
+      const videoElement = document.querySelector('video');
+      const stream = videoElement?.srcObject as MediaStream;
+      const track = stream?.getVideoTracks()[0];
+      if (track && typeof track.applyConstraints === 'function') {
+        await track.applyConstraints({
+          advanced: [{ torch: nextTorch }]
+        });
+      }
+    } catch (error) {
+      console.error('Не удалось включить вспышку:', error);
+    }
+  }}
+  icon={torch ? <Flashlight size={22} /> : <FlashlightOff size={22} />}
+  label="Фонарик"
+  disabled={!!capturedImage}
+/>
             <button
               onClick={handleCapture}
               disabled={capturing || isAnalyzing || !!capturedImage}
