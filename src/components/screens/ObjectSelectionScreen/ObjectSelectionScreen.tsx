@@ -92,7 +92,7 @@ export function ObjectSelectionScreen({
             </div>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-brand-700 grid place-items-center text-white font-bold text-sm shadow-glow shrink-0">
-            ИК
+            МТ
           </div>
         </div>
       </header>
