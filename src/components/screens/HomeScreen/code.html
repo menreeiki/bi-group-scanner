@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="ru" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&amp;family=Inter:wght@400;500&amp;family=Geist:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#005da8",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary-fixed-variant": "#004883",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "surface": "#f7f9fb",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#0076d2",
+                    "outline-variant": "#c0c7d6",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "outline": "#707785",
+                    "secondary-fixed": "#dae2fd",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-tertiary-container": "#fdfcff",
+                    "background": "#f7f9fb",
+                    "on-secondary-container": "#5c647a",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-fixed": "#001c39",
+                    "primary-fixed": "#d4e3ff",
+                    "surface-tint": "#005fac",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#404753",
+                    "inverse-primary": "#a4c9ff",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#66768d",
+                    "on-surface": "#191c1e",
+                    "primary-fixed-dim": "#a4c9ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#dae2fd",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "tertiary": "#4d5d73",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-container": "#fdfcff",
+                    "secondary": "#565e74",
+                    "brand-blue": "#0090FF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem",
+                    "margin-desktop": "2.5rem",
+                    "stack-lg": "2rem",
+                    "container-max": "1280px",
+                    "stack-md": "1rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Hanken Grotesk"],
+                    "code-mono": ["Geist"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Geist"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "code-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="flex flex-col min-h-screen">
+<!-- Top Navigation Anchor -->
+<header class="w-full top-0 sticky z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 flex items-center justify-center bg-on-surface rounded-lg">
+<!-- Mimicking logo shape from image -->
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">
+                Sapa<span class="text-brand-blue">S</span>can
+            </span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant">
+<span class="text-[10px] font-medium text-on-surface-variant uppercase tracking-wider">by BI Group</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-4 pt-6 pb-32 hero-gradient">
+<!-- Hero Header -->
+<div class="w-full text-center mb-8">
+<p class="text-brand-blue font-label-sm text-label-sm tracking-[0.2em] uppercase mb-2">Smart Construction</p>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface mb-3">Измеряй. Находи. Защищай.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px] mx-auto">
+                Интеллектуальный контроль качества и 3D-обмер объектов
+            </p>
+</div>
+<!-- Center Visual AR Scanning -->
+<div class="relative w-full max-w-[340px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-white scan-anim group">
+<div class="absolute inset-0 bg-black/10 z-10 pointer-events-none"></div>
+<!-- AR Interface Overlay -->
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-4 pointer-events-none">
+<div class="flex justify-between items-start">
+<div class="glass-effect rounded-lg p-2 text-[10px] font-code-mono text-on-surface-variant">
+                        FPS: 60.0<br>LAT: 12ms
+                    </div>
+<div class="glass-effect rounded-lg p-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-[10px] font-bold text-on-surface">REC</span>
+</div>
+</div>
+<!-- Measurement Points Simulation -->
+<div class="absolute top-1/2 left-1/4 w-3 h-3 border-2 border-brand-blue rounded-full"></div>
+<div class="absolute top-1/3 right-1/4 w-3 h-3 border-2 border-brand-blue rounded-full"></div>
+<div class="absolute bottom-1/4 left-1/2 w-3 h-3 border-2 border-brand-blue rounded-full"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-white/40 rounded-full flex items-center justify-center">
+<div class="w-1 h-1 bg-white rounded-full"></div>
+</div>
+<div class="w-full glass-effect rounded-xl p-3 flex items-center justify-between">
+<div>
+<div class="text-[10px] text-on-surface-variant font-medium">Текущая площадь</div>
+<div class="text-headline-md font-bold text-on-surface">42.5 м²</div>
+</div>
+<span class="material-symbols-outlined text-brand-blue">view_in_ar</span>
+</div>
+</div>
+<!-- Placeholder for AR scan visual -->
+<img class="w-full h-full object-cover" data-alt="A first-person perspective smartphone screen showing an advanced AR construction scanning application. A bright, light-filled modern apartment room is being mapped with a digital cyan grid overlay on the walls and floor. Measurement lines and floating digital data points indicate room dimensions. The aesthetic is clean, professional, and high-tech, emphasizing precision and blue-chip industrial reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0rz0GQEVxQG8N_SezBl-QEzP3qDKwUpGtD1y_2cih3B5xrzwRUIgPDbXd7ynfBg1HVE--b3c8ZvzYMQTZhTKC8TRsnF-3a8Ou-n_wY0NxwGJYFKahIOBeoYkX-NARp4ZiVtJbKVlkI5HzWV2q8dKHLVy2PKiqupnBxzMRTZTGNv9c-RWgh-f131lG8SxG5N017OG6Oa9KjOlJny95T96vOzXeV6ZoFWfBoBjSUojxhb-__kzbA8Le6w">
+</div>
+<!-- Action Section -->
+<div class="w-full max-w-[400px] flex flex-col gap-4 mt-8">
+<!-- Primary Action -->
+<button class="w-full bg-brand-blue text-white rounded-2xl p-5 flex items-center gap-4 active:scale-[0.98] transition-transform duration-150 shadow-lg shadow-brand-blue/20">
+<div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[32px]">center_focus_strong</span>
+</div>
+<div class="text-left">
+<div class="font-headline-md text-headline-md leading-tight">Live AR Сканирование</div>
+<div class="font-label-sm text-[12px] opacity-80">Поиск дефектов и рисков с ИИ</div>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-50">chevron_right</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full bg-white border-2 border-outline-variant text-on-surface rounded-2xl p-5 flex items-center gap-4 active:scale-[0.98] transition-transform duration-150">
+<div class="w-12 h-12 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-brand-blue text-[32px]">architecture</span>
+</div>
+<div class="text-left">
+<div class="font-headline-md text-headline-md leading-tight">2D / 3D Чертеж</div>
+<div class="font-label-sm text-[12px] text-on-surface-variant">Быстрый обмер и план помещения</div>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant">chevron_right</span>
+</button>
+</div>
+<!-- Status Footer -->
+<div class="mt-8 text-center px-6">
+<div class="flex items-center justify-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">verified</span>
+<p class="font-label-sm text-[11px] text-on-surface-variant leading-relaxed">
+                    Система синхронизирована с базами регламентов BI Group
+                </p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-lg flex justify-around items-center px-4 py-2 pb-safe">
+<!-- Обзор (Active) -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Обзор</span>
+</div>
+<!-- Проекты -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-label-sm text-label-sm">Проекты</span>
+</div>
+<!-- Скан -->
+
+<!-- Настройки -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Настройки</span>
+</div>
+</nav>
+<script class="">
+        // Simple micro-interaction for the AR scanning preview
+        document.addEventListener('DOMContentLoaded', () => {
+            const visualArea = document.querySelector('.scan-anim');
+            visualArea.addEventListener('mousemove', (e) => {
+                const rect = visualArea.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const moveX = (x / rect.width - 0.5) * 10;
+                const moveY = (y / rect.height - 0.5) * 10;
+                
+                visualArea.style.transform = `perspective(1000px) rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
+            });
+            
+            visualArea.addEventListener('mouseleave', () => {
+                visualArea.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+            });
+        });
+    </script>
+
+</body></html>

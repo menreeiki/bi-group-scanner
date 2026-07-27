@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    margin: 0;
+    overscroll-behavior-y: none;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40;
+  }
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/15;
+  }
+  .card-soft {
+    @apply bg-surface-bright rounded-card shadow-card border border-line-soft;
+  }
+  .btn-press {
+    @apply transition-transform duration-150 active:scale-[0.97];
+  }
+  .scan-mesh-floor {
+    background-image:
+      linear-gradient(rgba(0, 122, 255, 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 122, 255, 0.45) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .scan-mesh-wall {
+    background-image:
+      linear-gradient(rgba(0, 122, 255, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 122, 255, 0.3) 1px, transparent 1px);
+    background-size: 70px 70px;
+  }
+  .dot-grid {
+    background-image: radial-gradient(rgba(0, 122, 255, 0.18) 1px, transparent 1.4px);
+    background-size: 18px 18px;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .perspective-grid {
+    transform: perspective(1100px) rotateX(62deg) scale(2.4);
+    transform-origin: center top;
+    mask-image: radial-gradient(ellipse 70% 60% at center, black 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at center, black 20%, transparent 85%);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}

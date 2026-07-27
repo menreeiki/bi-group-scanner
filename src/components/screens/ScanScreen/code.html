@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SapaScan - Выбор объекта</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-container": "#5c647a",
+                "primary-fixed": "#d4e3ff",
+                "on-tertiary": "#ffffff",
+                "on-background": "#191c1e",
+                "surface-tint": "#005fac",
+                "surface-dim": "#d8dadc",
+                "primary": "#005da8",
+                "surface": "#f7f9fb",
+                "inverse-primary": "#a4c9ff",
+                "on-secondary": "#ffffff",
+                "surface-container": "#eceef0",
+                "on-surface": "#191c1e",
+                "on-surface-variant": "#404753",
+                "inverse-surface": "#2d3133",
+                "tertiary-fixed-dim": "#b7c8e1",
+                "on-primary-fixed-variant": "#004883",
+                "on-primary-container": "#fdfcff",
+                "on-tertiary-container": "#fdfcff",
+                "on-primary-fixed": "#001c39",
+                "surface-container-low": "#f2f4f6",
+                "inverse-on-surface": "#eff1f3",
+                "tertiary-fixed": "#d3e4fe",
+                "secondary-fixed-dim": "#bec6e0",
+                "error": "#ba1a1a",
+                "primary-container": "#0076d2",
+                "tertiary-container": "#66768d",
+                "surface-bright": "#f7f9fb",
+                "primary-fixed-dim": "#a4c9ff",
+                "background": "#f7f9fb",
+                "on-tertiary-fixed": "#0b1c30",
+                "on-tertiary-fixed-variant": "#38485d",
+                "surface-container-highest": "#e0e3e5",
+                "on-error": "#ffffff",
+                "secondary-fixed": "#dae2fd",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#dae2fd",
+                "outline": "#707785",
+                "on-secondary-fixed-variant": "#3f465c",
+                "on-secondary-fixed": "#131b2e",
+                "outline-variant": "#c0c7d6",
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e0e3e5",
+                "surface-container-high": "#e6e8ea",
+                "error-container": "#ffdad6",
+                "secondary": "#565e74",
+                "tertiary": "#4d5d73",
+                "brand-blue": "#0090FF"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "2xl": "1rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-md": "1rem",
+                "margin-mobile": "1rem",
+                "margin-desktop": "2.5rem",
+                "gutter": "1.5rem",
+                "container-max": "1280px",
+                "stack-sm": "0.5rem",
+                "stack-lg": "2rem"
+            },
+            "fontFamily": {
+                "headline-xl": ["Hanken Grotesk"],
+                "body-lg": ["Inter"],
+                "headline-md": ["Hanken Grotesk"],
+                "headline-lg": ["Hanken Grotesk"],
+                "label-sm": ["Geist"],
+                "code-mono": ["Geist"],
+                "body-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      body {
+        background-color: #f7f9fb;
+        color: #191c1e;
+        -webkit-font-smoothing: antialiased;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .map-marker-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: .7; transform: scale(1.1); }
+      }
+      .custom-shadow {
+        box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar (Mapped from Shared Component JSON) -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant flex items-center justify-between px-margin-mobile py-4 h-16">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Выбор объекта сканирования</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a construction site manager wearing a white hard hat and reflective vest, set against a blurred background of a modern steel skyscraper under a clear blue sky. The lighting is soft and natural, emphasizing a high-end corporate B2B SaaS aesthetic with crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3PRIlp49r6FhJkcFc_zBkLJsPymHUHwGP13WLYzdpxtE_vnJZ82YbnZ6LB87WUh_-FscxFuj8MkgCKsrwDZ01Yyenuw30zB18n6LaVBgpLCIQN7AxmDgE9A9tw4v0iRxnQYyhj5S5yQNhzR0un5nMV8dtl9GEL4Hux1cTWMenH0n1qAcIa4gX2-2Z7Pf2ods7GXkhJqHDtzpd1DPZrb0_B0aIW-v8m5euvQyxFislcyz-PqNSblcyyQ"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-container-max mx-auto w-full pb-32">
+<!-- Upper Section: Interactive Map Widget -->
+<section class="relative w-full h-[397px] overflow-hidden md:rounded-b-2xl shadow-sm">
+<!-- Simulated Map Canvas -->
+<div class="absolute inset-0 bg-[#E2E8F0] overflow-hidden">
+<div class="w-full h-full opacity-60 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] [background-size:20px_20px]"></div>
+<!-- Map Mockup Layer -->
+<div class="absolute inset-0 flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale-[20%]" data-alt="A high-fidelity minimalist digital map of Astana city, Kazakhstan, featuring clean white and light grey streets, subtle green park areas, and a bright blue river. The style is modern industrial-tech, with sharp vector lines and no clutter. Scattered across the map are distinct BI Group blue pin markers indicating high-end residential complexes, creating a sense of professional precision and geospatial intelligence." data-location="Astana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkDX0kAmEoGF4Yd_QcHN6YF6uwdYBHbEXUT2iu6zgBGjgqLbs6EFokVWywvHiQBeFOEUsDfQSb2DRMSj1cbRJC-2V_zr2BDv6vd09rzPFBH1bNtIY4JEitz7dZQK9_GP7r_b7OX3657nfjuVsOCPnyvP9hldFwFNKEnemnDJX7sZzodjAnTo5_WW6wAv_K6dxO_dgIrqe8EC6MsesDgNYClU2gGs0zzty-gLRsemfD6BX5vDSKFD_arA"/>
+</div>
+<!-- Markers Overlay -->
+<!-- Sensata Park Marker -->
+<div class="absolute top-1/3 left-1/4 group cursor-pointer">
+<div class="flex flex-col items-center">
+<div class="bg-white px-3 py-1 rounded-full shadow-lg border border-outline-variant mb-1 flex items-center gap-2">
+<span class="text-[12px] font-bold text-on-surface">ЖК Sensata Park</span>
+</div>
+<div class="w-4 h-4 bg-brand-blue rounded-full border-2 border-white map-marker-pulse shadow-md"></div>
+</div>
+</div>
+<!-- Grand Turan Marker -->
+<div class="absolute top-1/2 left-2/3 group cursor-pointer opacity-80 hover:opacity-100">
+<div class="flex flex-col items-center">
+<div class="bg-white px-3 py-1 rounded-full shadow-lg border border-outline-variant mb-1 flex items-center gap-2">
+<span class="text-[12px] font-medium text-on-surface-variant">ЖК Grand Turan</span>
+</div>
+<div class="w-4 h-4 bg-primary-container rounded-full border-2 border-white shadow-md"></div>
+</div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors mt-4">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</section>
+<!-- Selection Card -->
+<section class="px-margin-mobile -mt-10 relative z-10">
+<div class="bg-white rounded-2xl border border-outline-variant p-6 custom-shadow max-w-2xl mx-auto">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-primary-container/20 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">apartment</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Текущий выбор</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">ЖК Sensata Park</h2>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Dropdown: Block -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 ml-1">Здание / Блок</label>
+<button class="w-full flex items-center justify-between bg-white border border-outline-variant px-4 py-3 rounded-xl hover:border-primary transition-all focus:ring-4 focus:ring-primary/10 text-left">
+<span class="font-body-md text-on-surface">Блок B</span>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Dropdown: Floor -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 ml-1">Этаж</label>
+<button class="w-full flex items-center justify-between bg-white border border-outline-variant px-4 py-3 rounded-xl hover:border-primary transition-all text-left">
+<span class="font-body-md text-on-surface">4 Этаж</span>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Dropdown: Unit -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 ml-1">Помещение</label>
+<button class="w-full flex items-center justify-between bg-white border border-outline-variant px-4 py-3 rounded-xl hover:border-primary transition-all text-left">
+<span class="font-body-md text-on-surface">Квартира №45</span>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-6 p-4 bg-surface-container-low rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-on-secondary-container mt-0.5">info</span>
+<p class="text-sm text-on-secondary-container leading-relaxed">
+                        По данному объекту доступна актуальная 3D-подложка от 22.07.2026. AR-сканирование будет привязано к координатной сетке здания.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-md border-t border-outline-variant p-margin-mobile flex justify-center items-center z-50">
+<button class="w-full max-w-md h-14 bg-brand-blue text-white rounded-2xl flex items-center justify-center gap-3 font-headline-md text-headline-md hover:brightness-110 active:scale-95 transition-all shadow-lg">
+<span class="material-symbols-outlined text-[28px]">photo_camera_front</span>
+<span class="material-symbols-outlined text-[28px] -ml-2" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<span>Запустить AR-Сканер</span>
+</button>
+</div>
+<!-- Bottom Navigation (Shared Component Logic) - Hidden on this focused screen but logic remains -->
+<!-- We suppress the BottomNavBar because this is a "Task-Focused" screen according to the "Semantic Shell" mandate -->
+<script>
+        // Simple Interaction logic for dropdown simulation
+        document.querySelectorAll('button.border-outline-variant').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('border-primary');
+                this.classList.toggle('ring-4');
+                this.classList.toggle('ring-primary/10');
+            });
+        });
+
+        // AR Button Ripple Effect
+        const arBtn = document.querySelector('button.bg-brand-blue');
+        arBtn.addEventListener('click', function(e) {
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+            
+            let ripple = document.createElement('span');
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('absolute', 'w-4', 'h-4', 'bg-white/30', 'rounded-full', 'animate-ping');
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 1000);
+        });
+    </script>
+</body></html>
