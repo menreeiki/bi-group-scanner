@@ -120,11 +120,12 @@ export function SettingsScreen() {
             value="2.4.1"
           />
           <SettingsRow
-            icon={<HelpCircle size={18} />}
-            label="Поддержка"
-            value="Связаться"
-            chevron
-          />
+  icon={<HelpCircle size={18} />}
+  label="Поддержка"
+  value="Связаться"
+  chevron
+  onClick={() => alert('Служба поддержки: 8 (775) 789-59-22')}
+/>
         </SettingsGroup>
       </section>
 
